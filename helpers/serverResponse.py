@@ -9,10 +9,12 @@ def success_response(message,data=None):
 
     }),200
 
-def error_response(status_code,data=None):
+def error_response(status_code,message):
     return jsonify({
         "status":status_code,
-
-    })
+        "error":True,
+        "message":message,
+        "data":None
+    }),status_code
 
 

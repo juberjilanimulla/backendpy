@@ -19,7 +19,7 @@ def log_request():
     logging.info(f"{request.remote_addr} {request.method} {request.url}")
 
 # Routes
-app.register_blueprint(auth_bp,url_prefix="/api/auth")
+# app.register_blueprint(auth_bp,url_prefix="/api/auth")
 
 
 # Default error handler
@@ -28,5 +28,5 @@ def internal_error(e):
     return jsonify({"error": "Internal server error"}), 500
 
 if __name__ == "__main__":
-    seed_admin()  # similar to Admin() from JS
+    # seed_admin()  # similar to Admin() from JS
     app.run(port=Config.PORT, debug=True)
